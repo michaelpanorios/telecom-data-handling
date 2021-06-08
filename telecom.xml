@@ -1,0 +1,58 @@
+<?xml version = "1.0"  encoding = "utf-8"?>
+<!DOCTYPE carrier_service SYSTEM "telecom.dtd">
+<carrier_service name="OTE" year="1992">
+
+    <typical_service>
+        <programs id="_1">
+            <title category_name="mobile" fee="NEWCU">Mobile Start 1</title>
+            <mobile choice_mobile="contract"></mobile>
+            <packet_services>
+                <data>1GB</data>
+                <supplier_mobile_calls>17min</supplier_mobile_calls>
+                <supplier_wired_calls>14min</supplier_wired_calls>
+                <wired_non_national_calls>10min</wired_non_national_calls>
+                <supplier_sms>20sms</supplier_sms>
+                <national_sms>16sms</national_sms>
+                <international_sms>33sms</international_sms>
+            </packet_services>
+            <time>10 months</time>
+            <new_sim available="no"></new_sim>
+            <benefits quantity="1"></benefits>
+            <prices category="new_client">17.90$</prices>
+            <charges>
+                <activation_fee>3$</activation_fee>
+                <installation_fee>4$</installation_fee>
+            </charges>
+        </programs>
+    </typical_service>
+    <combo_service>
+        <offers code="a1" charging="20$" sales_tax="1$" client_category="new_client">
+            <programs id="_2" >
+                <title category_name="home_teleph_and_internet" fee="NEWHO">Home Start 1</title>
+                <wired choice_wired="giga_fiber" />
+                <packet_services>
+                    <wired_national_calls>31min</wired_national_calls>
+                    <mobile_national_calls>13min</mobile_national_calls>
+                    <international_calls>
+                        <minutes>24min</minutes>
+                        <countries>
+                            <country_name>Greece</country_name>
+                            <valid type="wired"/>
+                        </countries>
+                    </international_calls>
+                    <data_speed>50Mbps-Fiber</data_speed>
+                </packet_services>
+                <time>12 months</time>
+                <new_router model_router="Quick">YES</new_router>
+                <prices category="new_client">21.90$</prices>
+                <charges>
+                    <activation_fee>2$</activation_fee>
+                    <installation_fee>15$</installation_fee>
+                </charges>
+            </programs>
+            <from_to period="01/01-01/12" />
+            <gift attribute="Iphone"/>
+        </offers>
+    </combo_service>
+
+</carrier_service>

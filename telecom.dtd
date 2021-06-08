@@ -1,0 +1,56 @@
+<!--ELEMENTS-->
+<!ELEMENT carrier_service (typical_service,combo_service)>
+<!ELEMENT typical_service (programs+)>
+<!ELEMENT combo_service (offers*)>
+<!ELEMENT programs (title,mobile?,wired?,packet_services,time,(new_sim|new_router|new_mpeg)?,benefits*,prices,charges?)>
+<!ELEMENT mobile EMPTY>
+<!ELEMENT wired EMPTY>
+<!ELEMENT packet_services (data?,supplier_mobile_calls?,supplier_wired_calls?,wired_non_national_calls?,wired_national_calls?,mobile_national_calls?,remaining_time?,international_calls?,supplier_sms?,national_sms?,international_sms?,data_tv?,data_speed?)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT supplier_mobile_calls (#PCDATA)>
+<!ELEMENT supplier_wired_calls (#PCDATA)>
+<!ELEMENT wired_non_national_calls (#PCDATA)>
+<!ELEMENT wired_national_calls (#PCDATA)>
+<!ELEMENT mobile_national_calls (#PCDATA)>
+<!ELEMENT remaining_time (#PCDATA)>
+<!ELEMENT international_calls (minutes,countries+)>
+<!ELEMENT supplier_sms (#PCDATA)>
+<!ELEMENT national_sms (#PCDATA)>
+<!ELEMENT international_sms (#PCDATA)>
+<!ELEMENT data_tv EMPTY>
+<!ELEMENT data_speed (#PCDATA)>
+<!ELEMENT minutes (#PCDATA)>
+<!ELEMENT countries (country_name,valid)>
+<!ELEMENT country_name (#PCDATA)>
+<!ELEMENT occupation (#PCDATA)>
+<!ELEMENT charges (activation_fee?,installation_fee?)>
+<!ELEMENT activation_fee (#PCDATA)>
+<!ELEMENT installation_fee (#PCDATA)>
+<!ELEMENT prices (#PCDATA)>
+<!ELEMENT offers (programs+,from_to,gift*)>
+<!ELEMENT from_to EMPTY>
+<!ELEMENT contract (#PCDATA)>
+<!ELEMENT gift EMPTY>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT new_sim EMPTY>
+<!ELEMENT new_router (#PCDATA)>
+<!ELEMENT new_mpeg (#PCDATA)>
+<!ELEMENT benefits EMPTY>
+<!ELEMENT valid EMPTY>
+<!--ATTLISTS-->
+<!ATTLIST carrier_service name CDATA #REQUIRED year CDATA #REQUIRED>
+<!ATTLIST from_to period CDATA #REQUIRED>
+<!ATTLIST gift attribute CDATA #IMPLIED>
+<!ATTLIST offers code ID #REQUIRED charging CDATA #REQUIRED sales_tax CDATA #REQUIRED client_category CDATA #REQUIRED>
+<!ATTLIST prices category (new_client|old_client|company) #REQUIRED>
+<!ATTLIST benefits quantity CDATA #REQUIRED>
+<!ATTLIST data_tv channels CDATA #REQUIRED kid_channels (yes|no) #REQUIRED sport_channels (yes|no) #REQUIRED movie_channels (yes|no) "no">
+<!ATTLIST new_router model_router CDATA #REQUIRED>
+<!ATTLIST new_mpeg model_mpeg CDATA #REQUIRED>
+<!ATTLIST new_sim available (yes|no) "no" cost CDATA #IMPLIED>
+<!ATTLIST valid type (wired|mobile|mobile_and_wired) "wired">
+<!ATTLIST mobile choice_mobile (contract|card_program|card_phone) #REQUIRED>
+<!ATTLIST wired choice_wired (giga_fiber|vdsl|adsl) #REQUIRED>
+<!ATTLIST programs id ID #REQUIRED>
+<!ATTLIST title category_name (mobile|home_teleph_and_internet|TV) "mobile" fee CDATA #REQUIRED>
